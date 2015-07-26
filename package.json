@@ -1,0 +1,29 @@
+{
+  "name": "@yuanqing/modal",
+  "version": "0.0.0",
+  "description": "Super-simple modals in vanilla JavaScript.",
+  "author": "Lim Yuan Qing",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuanqing/modal.git"
+  },
+  "main": "modal.js",
+  "devDependencies": {
+    "jshint": "^2.8.0",
+    "uglify-js": "^2.4.24"
+  },
+  "scripts": {
+    "start": "npm run dist && open 'http://localhost:4242/example/'; ecstatic --port 4242",
+    "lint": "jshint --verbose modal.js",
+    "dist": "uglifyjs modal.js --mangle --output modal.min.js",
+    "build": "npm run lint && npm run dist"
+  },
+  "keywords": [
+    "browser",
+    "dialog",
+    "form",
+    "modal",
+    "window"
+  ]
+}

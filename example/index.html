@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>modal</title>
+    <meta charset="utf-8">
+    <style>
+      .modal {background: rgba(0,0,0,.25); }
+      .modal__dialog {width: 300px; margin: 25px 0; background: #fff; }
+    </style>
+  </head>
+  <body>
+
+    <button class="js-modal-show">Show</button>
+    <div style="height: 1000px;"><!-- page content --></div>
+
+    <div class="modal">
+      <div class="modal__dialog">
+        <button class="js-modal-hide">Hide</button>
+        <div style="height: 1000px;"><!-- modal content --></div>
+      </div>
+    </div>
+
+    <script src="../modal.js"></script>
+    <script>
+      var elem = document.querySelector('.modal');
+      var opts = {
+        showSelector: '.js-modal-show',
+        hideSelector: '.js-modal-hide',
+        dialogSelector: '.modal__dialog',
+        fade: {
+          duration: '.2s',
+          timingFunction: 'ease'
+        }
+      };
+      modal(elem, opts);
+    </script>
+
+  </body>
+</html>
