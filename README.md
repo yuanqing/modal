@@ -13,7 +13,7 @@
 
 ## Usage
 
-> [**Editable demo**](https://jsfiddle.net/reo95c66/)
+> [**Editable demo**](https://jsfiddle.net/ms31msb0/)
 
 ```html
 <!DOCTYPE html>
@@ -23,7 +23,7 @@
     <meta charset="utf-8">
     <style>
       .modal {background: rgba(0,0,0,.25); }
-      .modal__dialog {margin: 25px auto; max-width: 500px; background: #fff; }
+      .modal__dialog {width: 300px; margin: 25px 0; background: #fff; }
     </style>
   </head>
   <body>
