@@ -22,7 +22,7 @@
     }
   })();
 
-  // Binds the `handler` to all elements that match the `selector`.
+  // Binds the given `handler` to all elements that match the `selector`.
   function bindToClick(selector, handler) {
     var elems = document.querySelectorAll(selector);
     var i = -1;
@@ -105,7 +105,8 @@
 
   Modal.prototype.show = function(triggerElem) {
     var self = this;
-    var elemStyle = self.elem.style;
+    var elem = self.elem;
+    var elemStyle = elem.style;
     if (!self.isVisible) {
       // Disable scrolling on the window, and show the modal.
       document.body.style.overflow = 'hidden';
@@ -116,34 +117,35 @@
       elemStyle.display = 'block';
       // Scroll to the top of the modal.
       if (self.scrollTop) {
-        self.elem.scrollTop = 0;
+        elem.scrollTop = 0;
       }
-      // Trigger fade-in only on the next frame.
+      // Trigger fade-in only on the next tick.
       if (self.fade) {
         setTimeout(function() {
           elemStyle.opacity = 1;
         }, 0);
       }
       self.isVisible = true;
-      self.onShow(self.elem, triggerElem);
+      self.onShow(elem, triggerElem);
       // If not fading, call `onShowEnd` immediately.
-      !self.fade && self.onShowEnd(self.elem);
+      !self.fade && self.onShowEnd(elem);
     }
   };
 
   Modal.prototype.hide = function(triggerElem) {
     var self = this;
+    var elem = self.elem;
     if (self.isVisible) {
       // Enable scrolling on the window.
       document.body.style.overflow = '';
       // Trigger fade-out.
       if (self.fade) {
-        self.elem.style.opacity = 0;
+        elem.style.opacity = 0;
       }
       self.isVisible = false;
-      self.onHide(self.elem, triggerElem);
+      self.onHide(elem, triggerElem);
       // If not fading, call `onHideEnd` immediately.
-      !self.fade && self.onHideEnd(self.elem);
+      !self.fade && self.onHideEnd(elem);
     }
   };
 
