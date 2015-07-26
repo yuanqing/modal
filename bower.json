@@ -1,7 +1,7 @@
 {
   "name": "modal",
   "main": "modal.min.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "homepage": "https://github.com/yuanqing/modal",
   "authors": [
     "Lim Yuan Qing"

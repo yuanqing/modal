@@ -1,6 +1,6 @@
 {
   "name": "@yuanqing/modal",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Super-simple modals in vanilla JavaScript.",
   "author": "Lim Yuan Qing",
   "license": "MIT",
